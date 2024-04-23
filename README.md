@@ -2,7 +2,7 @@
 
 This repository contains a demonstration of pre-fetching video URLs to play in a table view and implementing a cache system to store videos locally on the iOS platform.  
 
-<ins>**Features**</ins>  
+## Features 
 
 **Video Pre-fetching:**  
   - Pre-fetching mechanism to retrieve video URLs before they are needed, ensuring smooth playback experience.
@@ -17,7 +17,7 @@ This repository contains a demonstration of pre-fetching video URLs to play in a
   - Asynchronous loading of videos to prevent blocking the main thread and enhance user experience.
 
 
-<ins>**Getting Started**</ins>  
+## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.  
 
@@ -36,7 +36,7 @@ Follow these instructions to get a copy of the project up and running on your lo
   4. Build and run the project on a simulator or a physical device.
 
 
-<ins>**Usage**</ins>  
+## Usage  
 
   1. Upon launching the app, you'll see a screen with button "To Player".  
   2. Tap on the button "To Player" and you'll see a table view populated with pre-fetched video URLs.  
