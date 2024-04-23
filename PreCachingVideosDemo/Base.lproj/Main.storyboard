@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="obl-xM-p1y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PreCachingVideosDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZa-ae-IrF">
+                                <rect key="frame" x="147" y="428" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="TNa-Vp-6ic"/>
+                                    <constraint firstAttribute="height" constant="40" id="z0t-LS-bwr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="To Player"/>
+                                <connections>
+                                    <action selector="goToPlayerClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tkL-GR-hSf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TZa-ae-IrF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="88o-AY-0u8"/>
+                            <constraint firstItem="TZa-ae-IrF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yc8-Fs-foS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="i6a-10-yxu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="83.705357142857139"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="Y9r-d2-jQ5">
+            <objects>
+                <viewController storyboardIdentifier="PlayerViewController" id="ENt-2X-dgU" customClass="PlayerViewController" customModule="PreCachingVideosDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kfs-MD-WgY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E95-Bh-ziD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerTblViewCell" rowHeight="400" id="gRa-Iv-kId" customClass="PlayerTblViewCell" customModule="PreCachingVideosDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRa-Iv-kId" id="M9B-04-sIG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-A2-woK" customClass="AGVideoPlayerView" customModule="PreCachingVideosDemo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="aNS-A2-woK" secondAttribute="trailing" id="ZM2-Hy-EIK"/>
+                                                <constraint firstItem="aNS-A2-woK" firstAttribute="leading" secondItem="M9B-04-sIG" secondAttribute="leading" id="mgo-fm-XOL"/>
+                                                <constraint firstItem="aNS-A2-woK" firstAttribute="top" secondItem="M9B-04-sIG" secondAttribute="top" id="x7j-13-9oL"/>
+                                                <constraint firstAttribute="bottom" secondItem="aNS-A2-woK" secondAttribute="bottom" id="y9c-wZ-zsv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoView" destination="aNS-A2-woK" id="M2J-4c-vHr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ENt-2X-dgU" id="0HC-o1-6N5"/>
+                                    <outlet property="delegate" destination="ENt-2X-dgU" id="lpV-uk-eay"/>
+                                    <outlet property="prefetchDataSource" destination="ENt-2X-dgU" id="cWe-eb-iQk"/>
+                                </connections>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8J-3h-86a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3jL-94-ZZv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E95-Bh-ziD" firstAttribute="leading" secondItem="3jL-94-ZZv" secondAttribute="leading" id="Fkc-UE-Nrj"/>
+                            <constraint firstItem="3jL-94-ZZv" firstAttribute="trailing" secondItem="E95-Bh-ziD" secondAttribute="trailing" id="KTR-38-aQE"/>
+                            <constraint firstItem="3jL-94-ZZv" firstAttribute="trailing" secondItem="W8J-3h-86a" secondAttribute="trailing" id="WHD-Kc-AeR"/>
+                            <constraint firstItem="W8J-3h-86a" firstAttribute="top" secondItem="3jL-94-ZZv" secondAttribute="top" id="ZWn-Dp-89K"/>
+                            <constraint firstItem="E95-Bh-ziD" firstAttribute="top" secondItem="3jL-94-ZZv" secondAttribute="top" id="eeD-MW-idY"/>
+                            <constraint firstItem="W8J-3h-86a" firstAttribute="leading" secondItem="3jL-94-ZZv" secondAttribute="leading" id="mqL-eL-MD2"/>
+                            <constraint firstItem="3jL-94-ZZv" firstAttribute="bottom" secondItem="W8J-3h-86a" secondAttribute="bottom" id="tKe-ti-fPE"/>
+                            <constraint firstItem="3jL-94-ZZv" firstAttribute="bottom" secondItem="E95-Bh-ziD" secondAttribute="bottom" id="tkq-C6-SxF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerBG" destination="W8J-3h-86a" id="d8q-bO-mHc"/>
+                        <outlet property="tblView" destination="E95-Bh-ziD" id="cey-vx-h4L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZe-ut-BK9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1806" y="84"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q9G-CP-fz8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="obl-xM-p1y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fUs-EQ-FhC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7Ss-xq-enk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSC-TY-jSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
